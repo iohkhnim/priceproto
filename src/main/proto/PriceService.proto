@@ -40,5 +40,5 @@ service PriceService {
   rpc getPriceHistory (GetPriceHistoryRequest) returns (stream PriceEntry);
   rpc getPrice (GetPriceRequest) returns (GetPriceResponse);
   rpc delete (DeleteRequest) returns (DeleteResponse);
-  rpc create (CreateRequest) returns (CreateRequest);
+  rpc create (CreateRequest) returns (CreateResponse);
 }
