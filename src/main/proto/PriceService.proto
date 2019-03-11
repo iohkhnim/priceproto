@@ -4,13 +4,13 @@ package com.khoi.proto;
 
 option java_multiple_files = true;
 
-message getPriceHistoryRequest {
+message GetPriceHistoryRequest {
   int32 product_id = 1;
 }
-message getPriceRequest {
+message GetPriceRequest {
   int32 product_id = 1;
 }
-message deleteRequest {
+message DeleteRequest {
   int32 product_id = 1;
 }
 
@@ -20,25 +20,25 @@ message PriceEntry {
   int32 price = 3;
 }
 
-message deleteResponse {
+message DeleteResponse {
 }
 
-message createRequest {
+message CreateRequest {
   int32 product_id = 1;
   int32 price = 2;
 }
 
-message createResponse {
+message CreateResponse {
   int32 id = 1;
 }
 
-message getPriceResponse {
+message GetPriceResponse {
   int32 price = 1;
 }
 
 service PriceService {
-  rpc getPriceHistory (getPriceHistoryRequest) returns (stream PriceEntry);
-  rpc getPrice (getPriceRequest) returns (getPriceResponse);
-  rpc delete (deleteRequest) returns (deleteResponse);
-  rpc create (createRequest) returns (createResponse);
+  rpc getPriceHistory (GetPriceHistoryRequest) returns (stream PriceEntry);
+  rpc getPrice (GetPriceRequest) returns (GetPriceResponse);
+  rpc delete (DeleteRequest) returns (DeleteResponse);
+  rpc create (CreateRequest) returns (CreateRequest);
 }
